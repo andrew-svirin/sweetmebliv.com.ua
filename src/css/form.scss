@@ -1,10 +1,11 @@
+$element-width: 260px;
+
 .action-btn {
-  margin-top: 40px;
-  width: 260px;
+  margin-top: 30px;
+  width: $element-width;
   height: 80px;
   font-size: 24px;
   text-align: center;
-  line-height: 80px;
   color: rgba(255, 255, 255, 0.9);
   border-radius: 18px;
   background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
@@ -28,4 +29,16 @@
 .field {
   display: flex;
   flex-direction: column;
+  width: $element-width;
+}
+
+#phone {
+  font-size: 24px;
+  padding: 14px 10px;
+}
+
+label {
+  color: #777;
+  text-align: left;
+  font-size: 20px;
 }
