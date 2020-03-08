@@ -1,0 +1,45 @@
+.header {
+  background: url("/img/header-banner.jpg") no-repeat center center;
+  background-size: 100%;
+  height: 640px;
+}
+
+.header-overlay {
+  background: rgba(51, 51, 51, 0.3);
+  height: inherit;
+  box-shadow: #000 10px 6px 20px;
+  display: flex;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 46px;
+}
+
+.title-overlay {
+  align-self: center;
+  padding: 20px;
+  width: 70%;
+  text-align: center;
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.contact-overlay {
+  align-self: center;
+  padding: 20px;
+}
+
+.call-form-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#call-form {
+  width: 300px;
+}

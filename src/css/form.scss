@@ -1,0 +1,31 @@
+.action-btn {
+  margin-top: 40px;
+  width: 260px;
+  height: 80px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  animation: anime 16s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
