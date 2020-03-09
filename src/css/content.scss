@@ -1,19 +1,37 @@
 .content {
   background-color: #eeeeee;
   color: #333333;
+
+  h2 {
+    margin: 0;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.content-title {
+  display: flex;
+  align-items: center;
 }
 
 .content-slide {
   display: flex;
+  padding-bottom: 60px;
 }
 
 .content-text {
-  width: 55%;
+  width: 50%;
   padding: 20px;
+  align-self: center;
 }
 
 .content-image {
-  width: 45%;
+  width: 50%;
+
   img {
     border-radius: 6px;
   }
@@ -21,4 +39,60 @@
 
 .right-slide {
   flex-direction: row-reverse;
+
+  .image-overlay {
+    background: linear-gradient(-45deg, #ffa63d, #ff3d77);
+
+    img {
+      margin-right: 20px;
+    }
+  }
+
+  .content-image {
+    text-align: right;
+  }
+
+  .text-overlay {
+    margin-left: 40px;
+  }
+}
+
+.left-slide {
+  .image-overlay {
+    background: linear-gradient(-45deg, #338aff, #3cf0c5);
+
+    img {
+      margin-left: 20px;
+    }
+  }
+
+  .content-text {
+    display: flex;
+    justify-content: end;
+  }
+
+  .text-overlay {
+    margin-right: 40px;
+  }
+}
+
+.image-overlay {
+  margin-top: 40px;
+  position: relative;
+  height: calc(100% - 80px);
+
+  img {
+    margin-top: -40px;
+    position: relative;
+    box-shadow: #aaaaaa 4px 4px 12px;
+  }
+}
+
+.num {
+  font-size: 60px;
+  margin-right: 20px;
+}
+
+.text-overlay {
+  width: 460px;
 }
