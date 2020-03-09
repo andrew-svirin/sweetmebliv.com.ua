@@ -1,0 +1,24 @@
+.content {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+.content-slide {
+  display: flex;
+}
+
+.content-text {
+  width: 55%;
+  padding: 20px;
+}
+
+.content-image {
+  width: 45%;
+  img {
+    border-radius: 6px;
+  }
+}
+
+.right-slide {
+  flex-direction: row-reverse;
+}
