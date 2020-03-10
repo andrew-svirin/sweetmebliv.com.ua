@@ -1,0 +1,21 @@
+.footer {
+  h2 {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+.footer-overlay {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-list {
+  width: 300px;
+}
+
+.contact-map {
+  align-self: flex-end;
+}
