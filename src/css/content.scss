@@ -24,13 +24,13 @@
 }
 
 .content-text {
-  width: 50%;
+  width: 47%;
   padding: 20px;
   align-self: center;
 }
 
 .content-image {
-  width: 50%;
+  width: 53%;
 
   img {
     border-radius: 6px;
@@ -95,4 +95,62 @@
 
 .text-overlay {
   width: 460px;
+}
+
+@media (max-width: 1023px) {
+  .content-slide,
+  .right-slide {
+    flex-direction: column;
+  }
+
+  .content-text {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-overlay {
+    img {
+      bottom: -20px;
+    }
+  }
+
+  .right-slide {
+    .content-image {
+      text-align: center;
+    }
+
+    .text-overlay {
+      margin-left: 0;
+    }
+
+    .image-overlay {
+      img {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .left-slide {
+    .content-text {
+      justify-content: center;
+    }
+
+    .text-overlay {
+      margin-right: 0;
+    }
+
+    .image-overlay {
+      img {
+        margin-left: 0;
+      }
+    }
+  }
+
+
 }

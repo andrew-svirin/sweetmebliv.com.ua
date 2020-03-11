@@ -13,7 +13,7 @@
   }
 
   .field, .btn {
-    width: 300px;
+    width: 260px;
   }
 }
 
@@ -26,6 +26,7 @@
 
 .footer-col {
   margin: 0 10px;
+  width: 310px;
 }
 
 .contact-list {
@@ -33,10 +34,9 @@
 }
 
 .contact-items {
-  font-size: 20px;
 
   .label {
-    width: 100px;
+    width: 80px;
   }
 
   .value {
@@ -46,5 +46,12 @@
 
 .contact-item {
   display: flex;
-  margin: 40px 0;
+  margin: 30px 0;
+}
+
+@media (max-width: 1023px) {
+  .footer-overlay {
+    flex-direction: column;
+    align-items: center;
+  }
 }
