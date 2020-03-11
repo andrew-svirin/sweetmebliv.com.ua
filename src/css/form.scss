@@ -1,8 +1,5 @@
-$element-width: 260px;
-
 .action-btn {
   margin-top: 30px;
-  width: $element-width;
   height: 80px;
   font-size: 24px;
   text-align: center;
@@ -11,6 +8,16 @@ $element-width: 260px;
   background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
   background-size: 600%;
   animation: anime 16s linear infinite;
+  cursor: pointer;
+}
+
+.btn-blue {
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+  color: #333333;
+  border-radius: 18px;
+  background: #72f2ff;
   cursor: pointer;
 }
 
@@ -29,16 +36,29 @@ $element-width: 260px;
 .field {
   display: flex;
   flex-direction: column;
-  width: $element-width;
+  margin: 14px 0;
 }
 
 #phone {
   font-size: 24px;
   padding: 14px 10px;
+  border-radius: 4px;
+}
+
+#email, #name {
+  padding: 10px 8px;
+  border-radius: 4px;
+}
+
+#message {
+  height: 60px;
+  padding: 10px 8px;
+  border-radius: 4px;
 }
 
 label {
   color: #777;
   text-align: left;
   font-size: 20px;
+  margin-bottom: 8px;
 }

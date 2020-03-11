@@ -3,19 +3,48 @@
     text-align: center;
     padding-top: 20px;
   }
+
+  label {
+    color: #eeeeee;
+  }
+
+  a {
+    color: #72f2ff;
+  }
+
+  .field, .btn {
+    width: 300px;
+  }
 }
 
 .footer-overlay {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
+}
+
+.footer-col {
+  margin: 0 10px;
 }
 
 .contact-list {
   width: 300px;
 }
 
-.contact-map {
-  align-self: flex-end;
+.contact-items {
+  font-size: 20px;
+
+  .label {
+    width: 100px;
+  }
+
+  .value {
+    width: 200px;
+  }
+}
+
+.contact-item {
+  display: flex;
+  margin: 40px 0;
 }
