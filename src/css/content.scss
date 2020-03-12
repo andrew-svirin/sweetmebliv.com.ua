@@ -151,6 +151,23 @@
       }
     }
   }
+}
 
+@media (max-width: 659px) {
+  .content-text {
+    width: 300px;
+  }
+}
 
+@media (max-width: 479px) {
+  .text-overlay {
+    width: 300px;
+  }
+
+  .image-overlay {
+    img {
+      width: 300px;
+      height: auto;
+    }
+  }
 }

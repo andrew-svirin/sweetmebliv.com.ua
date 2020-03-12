@@ -58,7 +58,18 @@
 }
 
 @media (max-width: 639px) {
+  .header {
+    height: auto;
+    background-size: cover;
+  }
+
   .header-overlay {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 479px) {
+  .call-form-overlay {
+    width: 260px;
   }
 }
