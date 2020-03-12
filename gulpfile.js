@@ -1,8 +1,7 @@
 'use strict';
 
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    uglify = require('gulp-uglify'),
+let gulp = require('gulp'),
+    uglify = require('gulp-uglify-es').default,
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
@@ -10,27 +9,35 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant');
 
-var path = {
+let path = {
     build: {
         html: 'build/',
         js: 'build/js/',
         css: 'build/css/',
-        img: 'build/img/'
+        img: 'build/img/',
+        backend: 'build/backend/'
     },
     src: {
         html: 'src/html/*.html',
         js: 'src/js/script.js',
         style: 'src/css/style.scss',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*.*',
+        backend: 'src/backend/**/*.*'
     },
     watch: {
         html: 'src/html/**/*.html',
         js: 'src/js/**/*.js',
         style: 'src/css/**/*.scss',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*.*',
+        backend: 'src/backend/**/*.*'
     },
     clean: './build'
 };
+
+gulp.task('backend:build', async function () {
+    gulp.src(path.src.backend)
+        .pipe(gulp.dest(path.build.backend));
+});
 
 gulp.task('html:build', async function () {
     gulp.src(path.src.html)
@@ -68,6 +75,7 @@ gulp.task('image:build', async function () {
 });
 
 gulp.task('build', gulp.series(
+    'backend:build',
     'html:build',
     'js:build',
     'css:build',
@@ -75,6 +83,7 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('watch', function () {
+    gulp.watch(path.watch.backend, gulp.series('backend:build'));
     gulp.watch(path.watch.html, gulp.series('html:build'));
     gulp.watch(path.watch.style, gulp.series('css:build'));
     gulp.watch(path.watch.js, gulp.series('js:build'));
