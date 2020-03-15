@@ -32,7 +32,6 @@ function setupEnv()
  */
 function processForms($post)
 {
-
     switch ($post['form']) {
         case 'call-form':
             printMessage('Мы перезвоним Вам очень скоро.', 'call-form');
