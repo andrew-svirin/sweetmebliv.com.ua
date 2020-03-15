@@ -82,7 +82,7 @@ function sendEmail($subject, $message)
     $mailer->Port = 587;
 
     $mailer->setFrom($username);
-    $mailer->addAddress(getenv('CONTACT_EMAIL'));
+    $mailer->addAddress($username);
     $mailer->AddCC(getenv('SUPPORT_EMAIL'));
 
     $mailer->isHTML(true);
