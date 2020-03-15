@@ -10,3 +10,6 @@ npm install
 ```bash
 gulp build
 ```
+
+### Deploy
+Move folders `var`, `www` and file `.env`

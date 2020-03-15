@@ -72,7 +72,6 @@ function sendEmail($subject, $message)
     require_once 'vendor/autoload.php';
     $mailer = new \PHPMailer\PHPMailer\PHPMailer();
 
-    $mailer->AddCC(getenv('SUPPORT_EMAIL'));
     $mailer->isSMTP();
 
     $mailer->Host = $host;
@@ -83,7 +82,8 @@ function sendEmail($subject, $message)
     $mailer->Port = 587;
 
     $mailer->setFrom($username);
-    $mailer->addAddress($username);
+    $mailer->addAddress(getenv('CONTACT_EMAIL'));
+    $mailer->AddCC(getenv('SUPPORT_EMAIL'));
 
     $mailer->isHTML(true);
     $mailer->CharSet = 'UTF-8';
