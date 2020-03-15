@@ -13,11 +13,11 @@ let gulp = require('gulp'),
 
 let path = {
     build: {
-        html: 'build/',
-        js: 'build/js/',
-        css: 'build/css/',
-        img: 'build/img/',
-        backend: 'build/backend/'
+        html: 'www/',
+        js: 'www/js/',
+        css: 'www/css/',
+        img: 'www/img/',
+        backend: 'www/backend/'
     },
     src: {
         html: 'src/html/*.html',
@@ -33,7 +33,7 @@ let path = {
         img: 'src/img/**/*.*',
         backend: 'src/backend/**/*.*'
     },
-    clean: './build'
+    clean: './www'
 };
 
 gulp.task('backend:build', async function () {
