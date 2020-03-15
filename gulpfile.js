@@ -7,7 +7,9 @@ let gulp = require('gulp'),
     rigger = require('gulp-rigger'),
     cssmin = require('gulp-csso'),
     imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant');
+    pngquant = require('imagemin-pngquant'),
+    preprocess = require('gulp-preprocess'),
+    env = require('gulp-env');
 
 let path = {
     build: {
@@ -42,6 +44,12 @@ gulp.task('backend:build', async function () {
 gulp.task('html:build', async function () {
     gulp.src(path.src.html)
         .pipe(rigger())
+        .pipe(preprocess({
+            context: env({
+                file: '.env',
+                type: '.ini',
+            })
+        }))
         .pipe(gulp.dest(path.build.html));
 });
 

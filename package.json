@@ -7,7 +7,9 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
+    "gulp-env": "^0.4.0",
     "gulp-imagemin": "^7.1.0",
+    "gulp-preprocess": "^3.0.3",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",

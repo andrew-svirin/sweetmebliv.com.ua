@@ -61,3 +61,28 @@ label {
   text-align: left;
   margin-bottom: 8px;
 }
+
+.message {
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 20px;
+  width: 260px;
+}
+
+.message-call-form {
+  border: 2px solid #338dfd4f;
+  background: #41ebc687;
+  color: #555555;
+}
+
+.message-contact-form {
+  border: 2px solid #777777;
+  background: #72f2ff;
+  color: #333333;
+}
+
+.message-error {
+  border: 2px solid #777777;
+  background: #ff4b43;
+  color: #333333;
+}

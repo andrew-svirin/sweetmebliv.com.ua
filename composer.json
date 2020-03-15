@@ -1,0 +1,15 @@
+{
+    "name": "andrew-svirin/sweetmebliv.com.ua",
+    "authors": [
+        {
+            "name": "Andriy Svirin",
+            "email": "andriy.svirin@ukrinsoft.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    },
+    "config": {
+        "vendor-dir": "src/backend/vendor"
+    }
+}
