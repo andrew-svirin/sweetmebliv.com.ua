@@ -84,6 +84,7 @@ function sendEmail($subject, $message)
     $mailer->setFrom($username);
     $mailer->addAddress($username);
     $mailer->AddCC(getenv('SUPPORT_EMAIL'));
+    $mailer->AddCC(getenv('CONTACT_EMAIL'));
 
     $mailer->isHTML(true);
     $mailer->CharSet = 'UTF-8';
