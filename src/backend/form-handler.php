@@ -84,11 +84,13 @@ function sendEmail($subject, $message)
     $mailer->setFrom($username);
     $mailer->addAddress($username);
     $mailer->AddCC(getenv('SUPPORT_EMAIL'));
-    $mailer->AddCC(getenv('CONTACT_EMAIL'));
+    if ('localhost' !== getenv('SITE')) {
+        $mailer->AddCC(getenv('CONTACT_EMAIL'));
+    }
 
     $mailer->isHTML(true);
     $mailer->CharSet = 'UTF-8';
-    $mailer->Subject = $subject.' - sweetmebliv.com.ua';
+    $mailer->Subject = $subject.' - '.getenv('SITE');
     $mailer->Body = $message;
 
     $mailer->send();
