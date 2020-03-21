@@ -9,9 +9,11 @@ let gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     preprocess = require('gulp-preprocess'),
-    env = require('gulp-env');
+    env = require('gulp-env'),
+    ftp = require('vinyl-ftp'),
+    gutil = require('gulp-util');
 
-let path = {
+const path = {
     build: {
         html: 'www/',
         js: 'www/js/',
@@ -33,8 +35,14 @@ let path = {
         img: 'src/img/**/*.*',
         backend: 'src/backend/**/*.*'
     },
-    clean: './www'
+    clean: './www',
+    deploy: 'www/**'
 };
+
+const envs = env({
+    file: '.env',
+    type: '.ini',
+});
 
 gulp.task('backend:build', async function () {
     gulp.src(path.src.backend)
@@ -45,10 +53,7 @@ gulp.task('html:build', async function () {
     gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(preprocess({
-            context: env({
-                file: '.env',
-                type: '.ini',
-            })
+            context: envs
         }))
         .pipe(gulp.dest(path.build.html));
 });
@@ -89,6 +94,24 @@ gulp.task('build', gulp.series(
     'css:build',
     'image:build'
 ));
+
+gulp.task('deploy', function () {
+
+    let conn = ftp.create({
+        host: process.env.FTP_HOST,
+        user: process.env.FTP_USER,
+        password: process.env.FTP_PASSWORD,
+        parallel: 10,
+        log: gutil.log
+    });
+
+    let globs = [
+        path.deploy,
+    ];
+    return gulp.src(globs, {buffer: false})
+        .pipe(conn.dest('sweetmebliv.com.ua/www'));
+
+});
 
 gulp.task('watch', function () {
     gulp.watch(path.watch.backend, gulp.series('backend:build'));

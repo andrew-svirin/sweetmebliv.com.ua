@@ -12,4 +12,6 @@ gulp build
 ```
 
 ### Deploy
-Move folders `var`, `www` and file `.env`
+```bash
+gulp deploy
+```
